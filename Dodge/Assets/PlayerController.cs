@@ -20,13 +20,17 @@ public class PlayerController : MonoBehaviour
         float zInput = Input.GetAxis("Vertical");
 
         // 실제 이동속도를 입력값과 이동 속력을 사용해 결정
-        float xSpeed = xInput * speed;
-        float zSpeed = zInput * speed;
+        //float xSpeed = xInput * speed;
+        //float zSpeed = zInput * speed;
 
         // Vector3 속도를 (xSpeed, 0, zSpeed)로 생성
-        Vector3 newVelocity = new Vector3(xSpeed, 0f, zSpeed);
+        //Vector3 newVelocity = new Vector3(xSpeed, 0f, zSpeed);
+
         // 리지드바디의 속도에 newVelocity 할당
-        playerRigidbody.velocity = newVelocity;
+        // playerRigidbody.velocity = newVelocity;
+
+        // 한줄로 변경
+        playerRigidbody.velocity = new Vector3(xInput, 0f, zInput) * speed;
 
         /*if (Input.GetKey(KeyCode.UpArrow) == true)
         {
